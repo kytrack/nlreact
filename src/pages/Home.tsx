@@ -30,17 +30,18 @@ const Home = () => {
   const faqs = [
     {
       question: "Hogyan működik az edzéstervező?",
-      answer: "Mesterséges intelligenciánk elemzi az erőnlétedet, céljaidat és rendelkezésre álló idődet, hogy személyre szabott edzéstervet készítsen."
+      answer: "A program kiszámítja először az edzettségi szintedet és az alapján generál egy számodra megfelelő edzéstervet."
     },
     {
-      question: "Mennyibe kerül az alkalmazás?",
-      answer: "Ingyenes alapverziót és prémium előfizetést is kínálunk, amelyek különböző funkciókat tartalmaznak."
+      question: "Mit csináljak, ha a program olyan gyarkorlatot ad amelyet nem tudok végezni?",
+      answer: "Az alkalmazás részletes tájékoztatást kínál minden gyarkolathoz, így nem fog nehezedre esni a kivitelezésük. Ha viszont semmiképpen nem ideális számodra a feladat, egy gomb segítségével lecserélheted egy másikra, amely ugyanazokat az izomcsoportokat célozza."
     },
     {
       question: "Kezdőknek is alkalmas?",
-      answer: "Igen! Alkalmazásunk minden fitness szinthez tud személyre szabott edzéstervet készíteni."
+      answer: "Igen! Az alkalmazásunkat kifejezetten kezdőknek ajánljuk akik nem tudják hogyan fogjanak hozzá az edzéshez, ugyanakkor a haladónak is tartogat új, izgalmas funkciókat a program."
     }
   ];
+
 
   return (
     <div className="landing-page">
@@ -49,11 +50,10 @@ const Home = () => {
         <nav>
           <div className="logo-container">
             <img 
-              src="/api/placeholder/80/80" 
-              alt="WorkoutWizard Logo" 
+              src="https://i.imgur.com/bPgA7qr.png" 
+              alt="NLLogo" 
               className="logo-image"
             />
-            <h1 className="logo-text">WorkoutWizard</h1>
           </div>
           <ul className="nav-links">
             <li onClick={() => scrollToSection('about')}>Rólunk</li>
@@ -69,7 +69,7 @@ const Home = () => {
       {/* Főoldal bevezető */}
       <section id="about" className="hero-section">
         <div className="hero-content">
-          <h2>Egyedi Edzéstervek Pillanatok Alatt</h2>
+          <h2>Lépj a Következő Szintre a NextLevel-el!</h2>
           <p>Személyre szabott edzéstervek, amelyek igazodnak céljaidhoz és életmódodhoz.</p>
           <button className="cta-button">Kezdjük!</button>
         </div>
@@ -79,7 +79,7 @@ const Home = () => {
       <section id="app" className="app-section">
         <div className="app-content">
           <div className="app-details">
-            <h2>WorkoutWizard Alkalmazás</h2>
+            <h2>NextLevel Windows Alkalmazás</h2>
             <p className="app-description">
               Forradalmasítjuk az edzéstervezést, hogy minden felhasználónk elérhesse egyéni fitness céljait.
             </p>
@@ -111,20 +111,27 @@ const Home = () => {
           
           <div className="app-mockup">
             <div className="mockup-device">
+              <div className="mockup-top-bar">
+                <div className="mockup-top-buttons">
+                  <div className="mockup-button mockup-close"></div>
+                  <div className="mockup-button mockup-minimize"></div>
+                  <div className="mockup-button mockup-expand"></div>
+                </div>
+              </div>
               <div className="mockup-screen">
                 <div className="screenshot-carousel">
                   <img 
-                    src="/api/placeholder/200/400" 
+                    src="/api/placeholder/800/470" 
                     alt="App Screenshot 1" 
                     className="app-screenshot active"
                   />
                   <img 
-                    src="/api/placeholder/200/400" 
+                    src="/api/placeholder/800/470" 
                     alt="App Screenshot 2" 
                     className="app-screenshot"
                   />
                   <img 
-                    src="/api/placeholder/200/400" 
+                    src="/api/placeholder/800/470" 
                     alt="App Screenshot 3" 
                     className="app-screenshot"
                   />
@@ -188,7 +195,7 @@ const Home = () => {
 
       {/* Lábléc */}
       <footer>
-        <p>© 2024 WorkoutWizard. Minden jog fenntartva.</p>
+        <p>© 2025 NextLevel. Minden jog fenntartva.</p>
       </footer>
     </div>
   );
