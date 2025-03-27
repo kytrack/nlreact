@@ -513,3 +513,65 @@ body {
       max-width: 500px;
     }
   }
+ /* Táblázat stílusok */
+  .plan-table {
+    margin-top: 2rem;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+    min-width: 150px;
+  }
+  
+  th {
+    background-color: #f8fafc;  /* Vilagos szürke háttér */
+    color: #1e293b;            /* Sötét szürke szöveg */
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0; /* Elválasztó vonal */
+  }
+  
+  .rest-day {
+    color: #94a3b8;
+    font-style: italic;
+    margin: 0;
+  }
+  
+  .plan-table ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .plan-table li {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .plan-table li:last-child {
+    border-bottom: none;
+  }
+  
+  @media (max-width: 768px) {
+    .plan-table {
+      font-size: 0.9rem;
+    }
+    
+    th, td {
+      padding: 0.75rem;
+      min-width: 120px;
+    }
+  }
