@@ -22,9 +22,18 @@ const Home = () => {
   const [selectedDays, setSelectedDays] = useState(3);
   const [openFAQ, setOpenFAQ] = useState(null);
 
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    section?.scrollIntoView({ behavior: 'smooth' });
+  const [planData, setPlanData] = useState(null);
+  
+    const generatePlan = async () => {
+      try {
+        const response = await fetch(
+          `https://nlapi.azurewebsites.net/api/GeneratePlanTrial?code=OuXi_EhdO_7NFT-2a04uFav5Nm-fjOHbCnnuB70JFdfaAzFukbllUw==&days=${selectedDays}`
+        );
+        const data = await response.json();
+        setPlanData(data);
+      } catch (error) {
+        console.error('Hiba a terv generálásakor:', error);
+      }
   };
 
   const faqs = [
@@ -155,7 +164,44 @@ const Home = () => {
             onChange={(e) => setSelectedDays(Number(e.target.value))}
             className="days-slider"
           />
-          <button className="generate-plan-button">Terv Generálása</button>
+          <button 
+            className="generate-plan-button"
+            onClick={generatePlan}
+          >
+            Terv Generálása
+          </button>
+
+          {planData && (
+            <div className="plan-table">
+              <h3>Heti Edzésterv</h3>
+              <table>
+                <thead>
+                  <tr>
+                    {['Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat', 'Vasárnap'].map((day) => (
+                      <th key={day}>{day}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    {planData.map((dayExercises, index) => (
+                      <td key={index}>
+                        {dayExercises.length > 0 ? (
+                          <ul>
+                            {dayExercises.map((exercise, exIndex) => (
+                              <li key={exIndex}>{exercise}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="rest-day">Pihenőnap</p>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
       </section>
 
