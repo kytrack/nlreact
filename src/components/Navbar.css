@@ -21,9 +21,6 @@ nav {
     box-sizing: border-box;
 }
 
-.logo-container .logo-image {
-    height: 50px;
-}
 
 .nav-links {
     display: flex;
