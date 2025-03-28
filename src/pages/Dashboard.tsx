@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { UserProfile } from '../types/authTypes';
 import apiClient from '../utils/ApiClient';
 import './Dashboard.css';
+import Navbar from '../Components/Navbar';
 
 interface Workout {
   id: number;
@@ -50,6 +51,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
+      <Navbar />
       <div className="dashboard-header">
         <div className="profile-section">
           {user.pfp_link && (

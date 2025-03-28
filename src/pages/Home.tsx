@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Home.css';
+import Navbar from '../Components/Navbar';
+
 
 const ChevronDownIcon = ({ className }) => (
   <svg 
@@ -55,25 +57,8 @@ const Home = () => {
   return (
     <div className="landing-page">
       {/* Navigáció */}
-      <header className="sticky-nav">
-        <nav>
-          <div className="logo-container">
-            <img 
-              src="https://i.imgur.com/bPgA7qr.png" 
-              alt="NLLogo" 
-              className="logo-image"
-            />
-          </div>
-          <ul className="nav-links">
-            <li onClick={() => scrollToSection('about')}>Rólunk</li>
-            <li onClick={() => scrollToSection('app')}>App</li>
-            <li onClick={() => scrollToSection('planner')}>Edzéstervező</li>
-            <li onClick={() => scrollToSection('download')}>Letöltés</li>
-            <li onClick={() => scrollToSection('faq')}>GYIK</li>
-          </ul>
-          <div className="profile-icon">👤</div>
-        </nav>
-      </header>
+      <Navbar />
+
 
       {/* Főoldal bevezető */}
       <section id="about" className="hero-section">
