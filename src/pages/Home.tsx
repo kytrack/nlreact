@@ -81,13 +81,13 @@ const Home = () => {
 
 
       {/* Főoldal bevezető */}
-      <section id="about" className="hero-section">
-        <div className="hero-content">
-          <h2>Lépj a Következő Szintre a NextLevel-el!</h2>
-          <p>Személyre szabott edzéstervek, amelyek igazodnak céljaidhoz és életmódodhoz.</p>
-          <button className="cta-button">Kezdjük!</button>
-        </div>
-      </section>
+<section id="about" className="hero-section">
+  <div className="hero-content">
+    <h2>Lépj a Következő Szintre a NextLevel-el!</h2>
+    <p>Személyre szabott edzéstervek, amelyek igazodnak céljaidhoz és életmódodhoz.</p>
+    <a href="#planner" className="cta-button">Kezdjük!</a>
+  </div>
+</section>
 
       {/* App funkciók - átdolgozva */}
       <section id="app" className="app-section">
